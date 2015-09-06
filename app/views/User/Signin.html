@@ -1,0 +1,17 @@
+{{set . "title" "Signin"}}
+{{template "header.html" .}}
+
+<form method="POST"> 
+    {{with $field := field "user.Email" .}} 
+    <div class="control-group {{$field.ErrorClass}}"> 
+      <label class="control-label" for="{{$field.Id}}">电子邮件</label> 
+      <div class="controls"> 
+        <input type="email" id="{{$field.Id}}" name="{{$field.Name}}" value="{{$field.Flash}}" required> 
+        {{if $field.Error}} 
+        <span class="help-inline">{{$field.Error}}</span> 
+        {{end}} 
+      </div> 
+    </div> 
+    {{end}}
+
+{{template "footer.html" .}}
