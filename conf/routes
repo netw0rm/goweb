@@ -4,7 +4,7 @@
 
 module:testrunner
 
-GET     /                                       App.Index
+GET     /                                       User.Signin
 GET     /app                                    App.Index
 
 GET     /signup                                 User.Signup
